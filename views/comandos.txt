@@ -1,0 +1,35 @@
+git flow init 
+
+#develop
+***changes
+git add .
+git commit -m 
+
+#feature
+git flow feature start <Nome-da-Feature>
+***changes
+git add .
+git commit -m
+git flow feature publish <Branch Name>
+git flow feature finish <Feature Name>  if someone runs the command Finish, the Branch will be Deleted from  gitHub.
+(se alguem fizer o finish vai ser excluido do github e depois faz o merge com o develop)
+
+#Release [Nome de release tem que ser numeral] [develop --> release]
+**Cenario develop
+git flow release start 1.0
+**if you have a problem, you can resolve there.
+git flow release finish 1.0
+
+TAG_EDITMSG---> escrevr uma mensagem sobre a tag e fechar o arquivo para mergear o codigo Main e voltar para develop
+
+#Verificando versão do projeto e fazendo mudança na versão [ main --> hotfix]
+git tag --> Verifica a versão que estar antes da nova mudança. 
+git flow hotfix start 1.1 --> Faça se estiver na Branch Main 
+**changes 
+git add .
+git commit -m
+**git flow hotfix publish 1.1 -- se tiver alguem trabalhando
+git flow hotfix finish 1.1
+TAG_EDITMSG
+
+#git push --all
